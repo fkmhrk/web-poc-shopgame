@@ -3,10 +3,12 @@
 /// <reference path="./clients/HTTPClient.ts" />
 
 import { getBody, isStatus200 } from "./clients/Functions";
+import AppBar from "./views/AppBar";
 
 export default class Application implements IApplication {
     private templateClient: HTTPClient;
     private router: IRouter;
+    appBar: IAppBar;
     services: IServices;
 
     constructor(
@@ -17,6 +19,7 @@ export default class Application implements IApplication {
         this.templateClient = templateClient;
         this.services = services;
         this.router = routerFactory(this);
+        this.appBar = new AppBar();
     }
 
     start() {
@@ -24,7 +27,7 @@ export default class Application implements IApplication {
     }
 
     fetchTemplate(name: string): Promise<string> {
-        const url = `/pages/${name}`;
+        const url = `/web-poc-shopgame/pages/${name}`;
         return this.templateClient
             .send(Method.GET, url, {}, null)
             .then(isStatus200)

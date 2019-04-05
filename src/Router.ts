@@ -5,13 +5,14 @@
 
 import TopPage from "./pages/TopPage";
 import LoginPage from "./pages/LoginPage";
+import MainPage from "./pages/MainPage";
 
 export default class Router implements IRouter {
     constructor(app: IApplication) {
-        page("/", () => {
-            //this.showPage(new TopPage(app));
-            this.showPage(new LoginPage(app));
-        });
+        const addPage = (path: string, f: any) => {
+            page(`/web-poc-shopgame${path}`, f);
+        };
+        addPage("/", () => this.showPage(new MainPage(app)));
     }
 
     start(): void {
