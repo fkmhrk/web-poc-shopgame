@@ -1,8 +1,14 @@
+let path = require('path');
+
 module.exports = {
     mode: "development",
     //mode: 'production',
 
     entry: "./src/main.ts",
+
+    output: {
+        path: path.resolve(__dirname, '') 
+    },
 
     module: {
         rules: [
