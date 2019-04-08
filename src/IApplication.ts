@@ -3,6 +3,7 @@
 
 interface IApplication {
     services: IServices;
+    strings: any;
 
     start(router: IRouter): void;
 

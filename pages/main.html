@@ -1,0 +1,35 @@
+<section class="main">
+    <h1>The shop</h1>
+
+    <p>A.C. {{year}} - Month {{month}}</p>
+    <ul>
+        <li>{{s.money}}:{{money}}</li>
+        <li>{{s.storeSize}}:{{storeSize}}</li>
+        <li>{{s.storeFee}}: {{storeFee}}</li>
+        {{#if storageSize == 0}}
+        <li>{{s['no-storage']}}</li>
+        {{else}}
+        <li>{{s['item-in-storage']}}:{{items}} / {{storageSize}}</li>
+        {{/if}}
+    </ul>
+
+    <div>
+        <label>Purchase items</label><br/>
+        <input type="number" value="{{purchase}}" min="0">
+    </div>
+    <div>
+        <label>Extend store</label><br/>
+        <input type="number" value="{{extendStore}}" min="0">
+    </div>    
+    <div>
+        <label>Extend storage</label><br/>
+        <input type="number" value="{{extendStorage}}" min="0">
+    </div>    
+    <div style="text-align: right;">
+        {{#if !isGameOver}}
+        <button as-mdc-button class="mdc-button mdc-button--raised next" on-click="submit">OK</button>
+        {{/if}}
+    </div>
+
+    <pre>{{msg}}</pre>
+</section>
