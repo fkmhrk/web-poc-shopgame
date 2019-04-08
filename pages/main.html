@@ -3,13 +3,13 @@
 
     <p>A.C. {{year}} - Month {{month}}</p>
     <ul>
-        <li>Money:{{money}}</li>
-        <li>Your store can have {{storeSize}} items</li>
-        <li>Store fee: {{storeFee}}</li>
+        <li>{{s.money}}:{{money}}</li>
+        <li>{{s.storeSize}}:{{storeSize}}</li>
+        <li>{{s.storeFee}}: {{storeFee}}</li>
         {{#if storageSize == 0}}
-        <li>No storage</li>
+        <li>{{s['no-storage']}}</li>
         {{else}}
-        <li>Items:{{items}} / {{storageSize}}</li>
+        <li>{{s['item-in-storage']}}:{{items}} / {{storageSize}}</li>
         {{/if}}
     </ul>
 

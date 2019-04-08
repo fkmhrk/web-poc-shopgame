@@ -31,6 +31,7 @@ export default class MainPage implements IPage {
                 //                mdc: mdc
             },
             data: {
+                s: this.app.strings,
                 year: 6000,
                 month: 1,
                 money: 100,
