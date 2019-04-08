@@ -3,8 +3,6 @@
 /// <reference path="./IApplication.ts" />
 /// <reference path="./pages/IPage.ts" />
 
-import TopPage from "./pages/TopPage";
-import LoginPage from "./pages/LoginPage";
 import MainPage from "./pages/MainPage";
 
 export default class Router implements IRouter {
